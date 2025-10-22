@@ -5,46 +5,203 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Fritanga La Selva — Inicio</title>
 
-    <!-- Enlaza tu archivo CSS (usa el .css que ya tienes) -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Mantén tu CSS externo si lo usas -->
+    <link rel="stylesheet" href="inicio.css">
+    <script src="inicio.js" defer></script>
 
-    <!-- Enlaza tu archivo JS (solo vinculado para tomar configuraciones) -->
-    <script src="java.js" defer></script>
+    <style>
+        :root{
+            --primary:#2e8b57;
+            --accent:#f6f6f6;
+            --muted:#6b7280;
+            --radius:10px;
+            --maxw:1100px;
+            --gap:18px;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color:#222;
+            background:linear-gradient(180deg,#fafafa 0%, #fff 100%);
+            -webkit-font-smoothing:antialiased;
+        }
+        .container{
+            max-width:var(--maxw);
+            margin:28px auto;
+            padding:20px;
+        }
+
+        /* Header */
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            background:var(--primary);
+            color:#fff;
+            padding:14px;
+            border-radius:var(--radius);
+        }
+        .brand{
+            display:flex;
+            gap:12px;
+            align-items:center;
+            text-decoration:none;
+            color:inherit;
+        }
+        .logo{
+            width:64px;
+            height:64px;
+            background:#fff2;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:12px;
+            font-weight:700;
+            font-size:1.25rem;
+            color:#fff;
+            border:2px solid rgba(255,255,255,0.12);
+        }
+        .brand h1{margin:0;font-size:1.15rem;line-height:1}
+        .brand p{margin:0;font-size:0.85rem;opacity:0.95}
+
+        /* Navegación */
+        nav ul{
+            display:flex;
+            gap:10px;
+            list-style:none;
+            margin:0;
+            padding:0;
+            align-items:center;
+        }
+        nav a{
+            color:#fff;
+            text-decoration:none;
+            padding:8px 12px;
+            border-radius:8px;
+            font-weight:600;
+            transition:background .15s;
+        }
+        nav a:hover{background:rgba(255,255,255,0.12)}
+
+        /* Hero */
+        .hero{
+            display:grid;
+            grid-template-columns: 1fr 320px;
+            gap:var(--gap);
+            margin-top:18px;
+            padding:20px;
+            background:linear-gradient(180deg,#fff,#fbfbfb);
+            border-radius:var(--radius);
+            box-shadow:0 6px 22px rgba(30,41,59,0.06);
+            align-items:start;
+        }
+        .kicker{display:inline-block;background:var(--accent);color:var(--muted);padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.8rem}
+        .lead{color:var(--muted);line-height:1.5}
+        .ctas{margin-top:12px}
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            padding:10px 14px;
+            border-radius:10px;
+            font-weight:700;
+            margin-right:8px;
+            transition:transform .12s;
+        }
+        .btn-primary{background:var(--primary);color:#fff}
+        .btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+        .btn:hover{transform:translateY(-3px)}
+
+        /* Right column */
+        .hero-right{
+            background:linear-gradient(180deg,#fff,#f7fff7);
+            border:1px solid rgba(46,139,87,0.06);
+            padding:14px;
+            border-radius:12px;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .promo{
+            background:#fff;
+            padding:12px;
+            border-radius:8px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.03);
+        }
+        .promo h3{margin:0 0 6px 0}
+        .quick-links a{display:block;color:var(--primary);text-decoration:none;padding:8px 0;font-weight:600}
+
+        /* Secondary quick nav */
+        .quick-row{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+            margin-top:18px;
+        }
+
+        /* Footer */
+        footer{
+            margin-top:18px;
+            padding:16px;
+            background:var(--primary);
+            color:#fff;
+            border-radius:10px;
+            display:flex;
+            justify-content:space-between;
+            gap:12px;
+            align-items:center;
+        }
+        footer a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+        /* Responsive */
+        @media (max-width:900px){
+            .hero{grid-template-columns:1fr; padding:16px}
+            nav ul{flex-wrap:wrap; gap:6px}
+            .container{padding:12px}
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header / Navegación -->
+        <!-- Header -->
         <header>
             <a class="brand" href="inicio.html" aria-label="Inicio - Fritanga La Selva">
-                <div class="logo">FS</div>
+                <svg class="logo-volcan" width="84" height="76" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Logotipo de Fritanga La Selva">
+  <!-- Base del volcán -->
+  <polygon class="volcan-base" points="30,80 50,30 70,80" />
+
+  <!-- Lava -->
+  <path class="lava" d="M50,30 Q48,25 52,25 Q50,20 50,30" />
+
+  <!-- Humo -->
+  <circle class="humo" cx="50" cy="20" r="5">
+    <animate attributeName="cy" values="20;15;20" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>
+<div class="fritanga-container"></div>
                 <div>
                     <h1>Fritanga La Selva</h1>
                     <p>Sabores tradicionales, fritos perfectos</p>
                 </div>
             </a>
 
-            <nav>
-                <div class="dropdown">
-                    <button class="dropdown-btn" aria-expanded="false" id="mainMenuBtn">
-                        Menú
-                        <span aria-hidden="true">▾</span>
-                    </button>
-                    <div class="dropdown-menu" role="menu" aria-labelledby="mainMenuBtn">
-                        <a href="inicio.html">Inicio</a>
-                        <a href="menu.html">Carta y Especiales</a>
-                        <a href="about.html">Presentación</a>
-                        <a href="ubicaciones.html">Ubicaciones</a>
-                        <a href="contacto.html">Contacto</a>
-                    </div>
-                </div>
+            <nav aria-label="Menú principal">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="menu.html">Carta</a></li>
+                    <li><a href="historia.html">Nuestra historia</a></li>
+                    <li><a href="ubicaciones.html">Ubicaciones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
             </nav>
         </header>
 
-        <!-- Hero / Presentación general & Bienvenida -->
+        <!-- Hero -->
         <section class="hero" aria-labelledby="heroTitle">
-            <div class="hero-left">
+            <div>
                 <span class="kicker">Bienvenida</span>
-                <h2 id="heroTitle">Bienvenido a Fritanga La Selva</h2>
+                <h2 id="heroTitle" style="margin-top:10px">Bienvenido a Fritanga La Selva</h2>
                 <p class="lead">
                     Somos una fritanga familiar especializada en recetas tradicionales: chicharrón crujiente,
                     patacones dorados y arepas hechas a mano. Calidad, sazón y atención cordial en cada pedido.
@@ -55,27 +212,33 @@
                     <a class="btn btn-outline" href="about.html">Nuestra Historia</a>
                 </div>
 
-                <!-- Presentación general breve -->
-                <div style="margin-top:16px; color:var(--muted); font-size:0.95rem;">
+                <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">
                     <strong>Presentación general:</strong>
-                    <p style="margin-top:6px;">
+                    <p style="margin-top:6px">
                         Fritanga La Selva nació para rescatar sabores locales con materias primas frescas.
                         Ofrecemos opciones para llevar, entregas a domicilio y eventos privados.
                     </p>
                 </div>
             </div>
 
-            <aside class="hero-right" aria-label="Enlaces rápidos">
-                <nav class="quick-links" aria-hidden="false">
+            <aside class="hero-right" aria-label="Enlaces rápidos y promociones">
+                <div class="promo">
+                    <h3>Promoción del día</h3>
+                    <p style="margin:6px 0;color:var(--muted)">Combo: chicharrón + patacones + bebida a precio especial.</p>
+                    <a class="btn btn-primary" href="menu.html">Pedir ahora</a>
+                </div>
+
+                <nav class="quick-links" aria-label="Enlaces rápidos">
+                    <div style="font-weight:700;color:var(--muted);font-size:0.95rem">Accesos rápidos</div>
                     <a href="menu.html">Promociones del día</a>
-                    <a href="ubicaciones.html">Horarios y sucursales</a>
+                    <a href="ubicaciones.html">Horario y sucursal</a>
                     <a href="contacto.html">Reservas y pedidos</a>
                 </nav>
             </aside>
         </section>
 
-        <!-- Sección breve de navegación secundaria / accesos rápidos -->
-        <section style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <!-- Quick actions -->
+        <section class="quick-row" aria-label="Navegación secundaria">
             <a class="btn btn-outline" href="menu.html">Carta completa</a>
             <a class="btn btn-outline" href="about.html">Quiénes somos</a>
             <a class="btn btn-outline" href="ubicaciones.html">Encuéntranos</a>
@@ -84,10 +247,12 @@
 
         <!-- Footer -->
         <footer>
-            <div>© <strong>Fritanga La Selva</strong> — Sazonando desde 2008</div>
-            <div style="display:flex; gap:12px;">
-                <a href="ubicaciones.html" style="color:var(--muted); text-decoration:none;">Sucursales</a>
-                <a href="contacto.html" style="color:var(--muted); text-decoration:none;">Ayuda</a>
+            <div>
+                © <strong>Fritanga La Selva</strong> — Sazonando desde 2008
+            </div>
+            <div style="display:flex;gap:12px;align-items:center">
+                <a href="ubicaciones.html">Sucursales</a>
+                <a href="contacto.html">Ayuda</a>
             </div>
         </footer>
     </div>
