@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fritanga La Selva — Ubicaciones y horarios</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        /* Estilos mínimos por si no existe el CSS global */
+        :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+        body{margin:0;line-height:1.5;color:#222;background:#fff}
+        header,footer{background:#0b5a2b;color:#fff;padding:1rem}
+        .container{max-width:1100px;margin:0 auto;padding:1rem}
+        nav a{color:#cfeeda;text-decoration:none;margin-right:1rem}
+        nav a[aria-current="page"]{font-weight:700;color:#fff}
+        main{padding:2rem 0}
+        h1{margin-top:0}
+        .map-wrapper{margin-top:1rem;border:1px solid #ddd;overflow:hidden;border-radius:6px}
+        footer .small{opacity:0.9;font-size:0.9rem}
+    </style>
+</head>
+<body>
+    <!-- Header (igual al resto del sitio) -->
+    <header>
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+                <a href="index.html" style="color:#fff;text-decoration:none;font-weight:700;font-size:1.25rem;">Fritanga La Selva</a>
+            </div>
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="menu.html">Menú</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="ubicaciones.html" aria-current="page">Ubicaciones</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <section>
+            <h1>Ubicaciones y horarios de atención</h1>
+            <p>Afuera de Universidad Americana (UAM), Managua, Nicaragua.</p>
+            <p><strong>Horario de atención:</strong> de 12:00 p.m. a 8:00 p.m.</p>
+
+            <!-- Mapa embebido mostrando la ubicación aproximada en Managua -->
+            <div class="map-wrapper" aria-label="Mapa con la ubicación aproximada">
+                <iframe
+                    title="Ubicación - Afuera de Universidad Americana (UAM), Managua"
+                    src="https://maps.google.com/maps?q=Universidad%20Americana%20Managua%20Nicaragua&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (igual al resto del sitio) -->
+    <footer>
+        <div class="container" style="display:flex;flex-direction:column;gap:.5rem;">
+            <div>Fritanga La Selva — Sabor tradicional</div>
+            <div class="small">Tel: (XXX) XXX-XXXX &nbsp;|&nbsp; Email: info@fritangalaselva.example</div>
+            <div class="small">© <span id="year"></span> Fritanga La Selva. Todos los derechos reservados.</div>
+        </div>
+        <script>
+            // Actualiza el año en el pie
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>
