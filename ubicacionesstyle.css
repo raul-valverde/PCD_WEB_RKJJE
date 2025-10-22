@@ -1,0 +1,199 @@
+/* ubicacionstyle.css
+    Estilos profesionales y cálidos para la sección "Ubicación".
+    Uso: envolver contenido en .ubicacion-section y usar las clases .ubicacion-container,
+    .ubicacion-info, .ubicacion-map-wrap, .ubicacion-title, .ubicacion-text, .ubicacion-card
+*/
+
+/* Variables de diseño (ajustar según estilo global del sitio) */
+:root{
+  --warm-1: #b5412b;     /* rojo cálido */
+  --warm-2: #d67a2f;     /* naranja */
+  --warm-3: #7a4f36;     /* marrón */
+  --bg-muted: #fbf7f3;
+  --glass: rgba(255,255,255,0.72);
+  --shadow: 0 10px 30px rgba(30,30,30,0.12);
+  --radius: 14px;
+  --max-width: 1100px;
+  --font-sans: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Sección principal: fondo con textura suave + imagen alusiva opcional */
+.ubicacion-section{
+  font-family: var(--font-sans);
+  color: #3b3028; /* tono oscuro cálido */
+  background-color: var(--bg-muted);
+  /* Textura ligera con SVG data-uri; comentar/añadir url('ruta/imagen.jpg') si se dispone de imagen */
+  background-image:
+     linear-gradient(rgba(255,247,242,0.6), rgba(255,247,242,0.6)),
+     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><rect fill='%23fbf7f3' width='120' height='120'/><path d='M0 60 Q30 30 60 60 T120 60' stroke='%23f1e9e4' stroke-opacity='0.6' stroke-width='1' fill='none'/></svg>");
+  background-repeat: repeat;
+  background-size: auto;
+  padding: 48px 20px;
+}
+
+/* Contenedor central */
+.ubicacion-container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: block;
+  border-radius: calc(var(--radius) + 6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,252,248,0.9));
+  box-shadow: var(--shadow);
+  padding: 28px;
+  border: 1px solid rgba(122,79,54,0.06);
+  overflow: hidden;
+}
+
+/* Encabezado */
+.ubicacion-title{
+  font-size: 1.9rem;
+  color: var(--warm-1);
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Subtítulo/Descripción */
+.ubicacion-text{
+  color: rgba(59,48,40,0.9);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+}
+
+/* Layout principal: info a la izquierda, mapa a la derecha (responsive) */
+.ubicacion-grid{
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Tarjeta de información (dirección, horario, contacto) */
+.ubicacion-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,250,246,0.6));
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(60,40,30,0.06);
+  border: 1px solid rgba(122,79,54,0.05);
+}
+
+.ubicacion-card h4{
+  margin: 0 0 8px 0;
+  color: var(--warm-3);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.ubicacion-card p{
+  margin: 0 0 10px 0;
+  color: rgba(59,48,40,0.85);
+}
+
+/* Elementos destacados (horario, teléfono) */
+.ubicacion-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 8px;
+}
+
+.ubicacion-meta .meta-item{
+  background: linear-gradient(90deg, rgba(214,122,47,0.06), rgba(181,65,43,0.03));
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: var(--warm-3);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Contenedor del mapa: responsivo y con borde redondeado */
+.ubicacion-map-wrap{
+  position: relative;
+  width: 100%;
+  /* usar relación 16:9 por defecto; cambiar con --aspect si se desea */
+  --aspect: 56.25%;
+  padding-top: var(--aspect);
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(40,30,20,0.12);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Iframe/mapa incrustado debe cubrir todo el contenedor */
+.ubicacion-map-wrap iframe,
+.ubicacion-map-wrap .map-embed{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Accento vertical para el contenedor (opcional, estilo consistente con otras páginas) */
+.ubicacion-container::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  width: calc(100% - 40px);
+  height: 2px;
+  top: 0;
+  background: linear-gradient(90deg, transparent, rgba(214,122,47,0.12), transparent);
+  border-radius: 2px;
+}
+
+/* Responsividad */
+@media (max-width: 980px){
+  .ubicacion-grid{
+     grid-template-columns: 1fr;
+  }
+  .ubicacion-map-wrap{
+     --aspect: 62.5%;
+  }
+  .ubicacion-container{
+     padding: 22px;
+  }
+}
+
+@media (max-width: 520px){
+  .ubicacion-title{
+     font-size: 1.5rem;
+  }
+  .ubicacion-card{
+     padding: 16px;
+  }
+  .ubicacion-meta .meta-item{
+     font-size: 0.9rem;
+     padding: 7px 10px;
+  }
+}
+
+/* Pequeña mejora visual para enlaces (reservas, ver mapa en Google) */
+.ubicacion-link{
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(90deg, var(--warm-1), var(--warm-2));
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(181,65,43,0.14);
+}
+
+/* Indicaciones para integrar en HTML:
+    <section class="ubicacion-section">
+      <div class="ubicacion-container">
+         <h2 class="ubicacion-title">Dónde estamos</h2>
+         <p class="ubicacion-text">Texto descriptivo...</p>
+         <div class="ubicacion-grid">
+            <div class="ubicacion-card">...info...</div>
+            <div class="ubicacion-map-wrap">
+              <iframe src="..."></iframe>
+            </div>
+         </div>
+      </div>
+    </section>
+*/
