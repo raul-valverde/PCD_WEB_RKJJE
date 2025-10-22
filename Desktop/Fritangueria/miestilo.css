@@ -28,7 +28,7 @@ nav a:hover {
 }
 
 /* ----- Título principal ----- */
-h2 {
+h1 {
   text-align: center;
   font-size: 2.3em;
   color: #c0392b;
@@ -113,5 +113,85 @@ p.subtitulo {
 
   .menu-container {
     padding: 0 20px;
+  }
+}
+/* Reducir tamaño de las cards y ajustar espacios */
+.menu-container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 0 30px 40px;
+}
+
+.menu-card {
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+/* Imágenes y textos más pequeños */
+.menu-card img {
+  height: 120px;
+  object-fit: cover;
+}
+
+.menu-card h3 {
+  font-size: 1.05em;
+  margin: 10px 0 4px;
+}
+
+.menu-card p {
+  font-size: 0.95em;
+  margin: 4px 0;
+}
+
+.stars {
+  font-size: 1em;
+}
+
+/* Botón más pequeño */
+.menu-card button {
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 0.95em;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .menu-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    padding: 0 15px 30px;
+  }
+
+  .menu-card img {
+    height: 100px;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+}
+/* Filas separadas: comidas arriba, bebidas abajo, alineadas horizontalmente */
+.menu-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(200px, 1fr);
+  gap: 18px;
+  justify-content: start;
+  align-items: start;
+}
+
+/* Asignar cada card a su fila según la clase */
+.menu-card.comida { grid-row: 1; }
+.menu-card.bebida { grid-row: 2; }
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .menu-container {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
   }
 }
