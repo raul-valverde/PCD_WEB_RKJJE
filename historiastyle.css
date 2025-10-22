@@ -1,0 +1,84 @@
+:root {
+  --color-tomate: #E74C3C;
+  --color-dorado: #F39C12;
+  --color-cafe: #8B4513;
+  --color-verde: #27AE60;
+  --color-naranja: #E67E22;
+
+  --fondo-claro: #fef9f4;
+  --texto-oscuro: #333;
+  --card-claro: #ffffff;
+  --sombra-suave: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--fondo-claro);
+  color: var(--texto-oscuro);
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-naranja);
+  color: white;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.historia-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.historia-section h2 {
+  font-size: 2rem;
+  color: var(--color-cafe);
+  margin-bottom: 2rem;
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.historia-card {
+  background-color: var(--card-claro);
+  border-left: 6px solid var(--color-verde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--sombra-suave);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.historia-card h3 {
+  color: var(--color-tomate);
+  margin-bottom: 0.5rem;
+}
+
+.historia-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--texto-oscuro);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-naranja);
+  font-size: 0.9rem;
+  color: white;
+}
