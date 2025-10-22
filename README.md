@@ -24,30 +24,38 @@ Integrante 1: Raúl Valverde
 Integrante 2: Kellys Bellanger
 - Rol Principal: Desarrollador Frontend, encaragdo de la pagina de menú.
 - Responsabilidades:
-  - [Lista de tareas específicas, ej: "Diseño de la base de datos" para poder escoger del menu al momentod e hacer un pedido]
+  - Lista de tareas específicas, ej: "Diseño de la base de datos" para poder escoger del menu al momentod e hacer un pedido
   - Realizar la interfaz funcional para la pagina dedicada al menú.
 
-Integrante 3: Jesser 
+Integrante 3: Jesser Rodriguez
+- Rol Principal: Desarrollador de la pagina de contacto y pedido.
+- Responsabilidades:
+Pruebas de funcionalidad y usabilidad
+  Creación y revisión de contenido
+  Optimización
+Integrante 4: Erick Arana
+- Rol Principal: Desarrollador Frontend, encaragdo de la pagina de historia y sobre eel negocio.
+- Responsabilidades:
+  - Lista de información persuasiva e inspiratoria para la pagina de historia.
+  - Realizar la interfaz funcional para la pagina de "sobre nosotros" o "acerca de".
+Integrante 5: Jimmy Selva
+- Rol Principal: Desarrollador Frontend, encaragdo de la pagina de ubicación y horarios.
+- Responsabilidades:
+  - Lista de información actualizada en tiempo real para los horarios y la disponibilidad de los dias feriados.
+  - Realizar la interfaz funcional para la la carga de ubicacion digital con funciones de google maps u otro navegador al igual qeu escribir la dirección.
 
------------------------------------------------------------------------------MODIFICAR 
-- **Rol Principal**: [Ej: Tester QA, Content Manager]
-- **Responsabilidades**:
-  - [Ej: "Pruebas de funcionalidad y usabilidad"]
-  - [Ej: "Creación y revisión de contenido"]
-  - [Ej: "Optimización SEO"]
+ Uso de GitHub Copilot
 
-## 🤖 Uso de GitHub Copilot
-
-### **Cómo Implementamos GitHub Copilot**
+Cómo Implementamos GitHub Copilot
 
 GitHub Copilot fue una herramienta fundamental en nuestro flujo de desarrollo, utilizada de las siguientes maneras:
 
-#### **🔄 Generación de Código Eficiente**
-- **Estructuras HTML**: Creación rápida de componentes repetitivos
-- **Estilos CSS**: Sugerencias para layouts responsive y efectos visuales
-- **Lógica JavaScript**: Ayuda en funciones complejas y manejo de eventos
+Generación de Código Eficiente
+- Estructuras HTML: Creación rápida de componentes repetitivos
+- Estilos CSS: Sugerencias para layouts responsive y efectos visuales
+- Lógica JavaScript: Ayuda en funciones complejas y manejo de eventos
 
-#### **📝 Ejemplos Concretos de Uso**
+Ejemplos Concretos de Uso
 
 ```html
 <!-- Solicitud a Copilot: "crea un navbar con logo y 5 enlaces" -->
