@@ -1,33 +1,36 @@
-// ubicacionesjava.js
+// archivo: ubicacionesjava.js
 (function () {
-    // Devuelve el mensaje según la hora actual
-    function getMensajePorHora(fecha = new Date()) {
-        const hora = fecha.getHours();
-        if (hora < 12) return 'Abrimos a las 12:00 p.m.';
-        if (hora >= 12 && hora < 20) return 'Estamos abiertos, ¡ven por tu pollo asado!';
-        return 'Ya cerramos por hoy. ¡Te esperamos mañana!';
-    }
-
-    // Inserta o actualiza el mensaje en la sección de horarios de ubicaciones.html
-    function mostrarMensajeHorarios() {
-        // Busca un contenedor común para "horarios": id, clase o atributo data
-        const selector = '#horarios, .horarios, [data-horarios]';
-        const contenedor = document.querySelector(selector);
-        if (!contenedor) return; // nada que hacer si no existe la sección
-
-        // Reutiliza un párrafo con clase 'mensaje-horario' si ya existe, si no lo crea
-        let p = contenedor.querySelector('.mensaje-horario');
-        if (!p) {
-            p = document.createElement('p');
-            p.className = 'mensaje-horario';
-            contenedor.appendChild(p);
+    function displayHorarioMessage() {
+        const selectors = [
+            '#horarios',
+            '.horarios',
+            'section#horarios',
+            'section.horarios',
+            '[data-section="horarios"]'
+        ];
+        const el = selectors.map(s => document.querySelector(s)).find(node => node) || null;
+        if (!el) {
+            console.warn('Sección de horarios no encontrada. Añade id="horarios" o class="horarios" en ubicaciones.html');
+            return;
         }
-        p.textContent = getMensajePorHora();
+
+        const hour = new Date().getHours(); // 0-23
+        let mensaje = '';
+
+        if (hour < 12) {
+            mensaje = 'Abrimos a las 12:00 p.m.';
+        } else if (hour < 20) {
+            mensaje = 'Estamos abiertos, ¡ven por tu pollo asado!';
+        } else {
+            mensaje = 'Ya cerramos por hoy. ¡Te esperamos mañana!';
+        }
+
+        // Inserta el mensaje y marca para lectores de pantalla
+        el.textContent = mensaje;
+        el.setAttribute('aria-live', 'polite');
     }
 
-    // Ejecutar cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', mostrarMensajeHorarios);
-
-    // Exponer la función globalmente por si se desea actualizar manualmente
-    window.mostrarMensajeHorarios = mostrarMensajeHorarios;
+    document.addEventListener('DOMContentLoaded', displayHorarioMessage);
+    // Exporta por si se desea llamar manualmente desde otra parte
+    window.displayHorarioMessage = displayHorarioMessage;
 })();
