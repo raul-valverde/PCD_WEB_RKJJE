@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fritanga Selva — Inicio</title>
+    <meta name="description" content="Fritanga Selva — frituras y comida tradicional. Bienvenido a nuestra página de inicio." />
+    <style>
+        :root{
+            --bg:#ffffff;
+            --accent:#0b6b2f; /* verde selva */
+            --accent-2:#f5a623; /* color secundario */
+            --muted:#6b6b6b;
+            --card:#f9f9f9;
+            --maxw:1100px;
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{
+            background:linear-gradient(180deg, #fff 0%, #f7fff8 100%);
+            color:#222;
+            line-height:1.45;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            padding:24px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .container{
+            width:100%;
+            max-width:var(--maxw);
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:16px;
+            margin-bottom:28px;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            text-decoration:none;
+            color:inherit;
+        }
+        .logo{
+            width:64px;
+            height:64px;
+            border-radius:12px;
+            background:linear-gradient(135deg,var(--accent),#0f8a3a);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-weight:700;
+            box-shadow:0 4px 14px rgba(11,107,47,0.18);
+            flex:0 0 64px;
+        }
+        .brand h1{
+            font-size:1.25rem;
+            letter-spacing:0.2px;
+        }
+        .brand p{font-size:0.85rem;color:var(--muted)}
+
+        nav{
+            position:relative;
+        }
+
+        /* Dropdown menu (desplegable principal) */
+        .dropdown-btn{
+            background:transparent;
+            border:1px solid rgba(11,107,47,0.12);
+            color:var(--accent);
+            padding:10px 14px;
+            border-radius:8px;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            font-weight:600;
+            transition:box-shadow .15s ease, transform .08s ease;
+        }
+        .dropdown-btn:active{transform:translateY(1px)}
+        .dropdown{
+            position:relative;
+            display:inline-block;
+        }
+        .dropdown-menu{
+            position:absolute;
+            right:0;
+            top:calc(100% + 10px);
+            min-width:220px;
+            background:var(--card);
+            border-radius:10px;
+            box-shadow:0 10px 30px rgba(15,15,15,0.08);
+            overflow:hidden;
+            border:1px solid rgba(11,107,47,0.06);
+            display:none;
+            z-index:50;
+        }
+        .dropdown-menu a{
+            display:block;
+            padding:12px 14px;
+            color:#163a25;
+            text-decoration:none;
+            font-weight:600;
+            border-bottom:1px solid rgba(0,0,0,0.03);
+            transition:background .12s ease;
+        }
+        .dropdown-menu a:hover{background:rgba(11,107,47,0.04)}
+        .dropdown-menu a:last-child{border-bottom:0}
+
+        /* Hero */
+        .hero{
+            background:linear-gradient(180deg, rgba(11,107,47,0.03), transparent 40%);
+            border-radius:14px;
+            padding:28px;
+            display:flex;
+            gap:28px;
+            align-items:center;
+            justify-content:space-between;
+            box-shadow:0 6px 20px rgba(8,55,26,0.04);
+        }
+
+        .hero-left{
+            flex:1 1 60%;
+        }
+        .kicker{
+            display:inline-block;
+            background:rgba(11,107,47,0.08);
+            color:var(--accent);
+            padding:6px 10px;
+            border-radius:999px;
+            font-weight:700;
+            font-size:0.8rem;
+            margin-bottom:12px;
+        }
+        h2{
+            font-size:1.9rem;
+            margin-bottom:12px;
+            color:#072b19;
+        }
+        p.lead{
+            color:var(--muted);
+            margin-bottom:18px;
+        }
+        .ctas{display:flex;gap:12px;flex-wrap:wrap}
+        .btn{
+            padding:10px 14px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:700;
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            cursor:pointer;
+            border:0;
+        }
+        .btn-primary{
+            background:var(--accent);
+            color:white;
+            box-shadow:0 8px 18px rgba(11,107,47,0.16);
+        }
+        .btn-outline{
+            background:transparent;
+            color:var(--accent);
+            border:1px solid rgba(11,107,47,0.12);
+        }
+
+        .hero-right{
+            flex:0 0 280px;
+            background:linear-gradient(180deg,#fff,#fbfff7);
+            border-radius:12px;
+            padding:16px;
+            box-shadow:inset 0 -8px 30px rgba(11,107,47,0.02);
+        }
+        .quick-links{display:flex;flex-direction:column;gap:10px}
+        .quick-links a{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:10px;
+            border-radius:8px;
+            text-decoration:none;
+            color:#123a26;
+            background:transparent;
+            transition:background .12s ease, transform .08s ease;
+            border:1px solid rgba(11,107,47,0.04);
+            font-weight:700;
+            font-size:0.95rem;
+        }
+        .quick-links a:hover{background:rgba(11,107,47,0.04); transform:translateY(-2px)}
+
+        footer{
+            margin-top:20px;
+            color:var(--muted);
+            font-size:0.9rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px;
+        }
+
+        /* Responsive */
+        @media (max-width:780px){
+            .hero{flex-direction:column; padding:18px}
+            .hero-right{width:100%}
+            .brand h1{font-size:1rem}
+            .logo{width:54px;height:54px}
+            header{gap:8px;margin-bottom:20px}
+            .dropdown-menu{right:0;left:0}
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="document">
+        <header>
+            <a href="index.html" class="brand" aria-label="Fritanga Selva - inicio">
+                <div class="logo" aria-hidden="true">FS</div>
+                <div>
+                    <h1>Fritanga Selva</h1>
+                    <p>Frituras y sabores de la selva — calidad casera</p>
+                </div>
+            </a>
+
+            <nav aria-label="Navegación principal">
+                <div class="dropdown" id="pages-dropdown">
+                    <button class="dropdown-btn" id="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Páginas
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="dropdown-menu" role="menu" aria-label="Menú de páginas">
+                        <a href="index.html" role="menuitem">Inicio</a>
+                        <a href="menu.html" role="menuitem">Menú</a>
+                        <a href="historia.html" role="menuitem">Historia</a>
+                        <a href="ubicacion-horarios.html" role="menuitem">Ubi y horarios</a>
+                        <a href="contacto-pedido.html" role="menuitem">Contacto y pedido</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-left">
+                    <span class="kicker">Inicio</span>
+                    <h2 id="hero-title">Bienvenidos a Fritanga Selva</h2>
+                    <p class="lead">
+                        En Fritanga Selva encontrarás frituras tradicionales y platos típicos de la región, preparados con ingredientes frescos y recetas familiares.
+                        Somos un punto de encuentro para quienes buscan sabor auténtico y atención cercana.
+                    </p>
+
+                    <div class="ctas" aria-hidden="false">
+                        <a class="btn btn-primary" href="menu.html">Ver Menú</a>
+                        <a class="btn btn-outline" href="contacto-pedido.html">Contacto y Pedido</a>
+                    </div>
+
+                    <p style="margin-top:14px;color:var(--muted);font-size:0.95rem">
+                        Usa el botón "Páginas" (arriba a la derecha) para navegar entre Inicio, Menú, Historia, Ubi y horarios, y Contacto y pedido.
+                    </p>
+                </div>
+
+                <aside class="hero-right" aria-label="Accesos rápidos">
+                    <h3 style="margin-bottom:10px;color:#0b5526;font-size:1.05rem">Accesos rápidos</h3>
+                    <nav class="quick-links" aria-label="Enlaces rápidos">
+                        <a href="menu.html">🍽️ Nuestro Menú</a>
+                        <a href="historia.html">📜 Nuestra Historia</a>
+                        <a href="ubicacion-horarios.html">📍 Ubicación y Horarios</a>
+                        <a href="contacto-pedido.html">📞 Contacto y Pedido</a>
+                    </nav>
+                </aside>
+            </section>
+
+            <!-- Breve presentación adicional -->
+            <section style="margin-top:20px;padding:18px;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,0.03)">
+                <h4 style="margin-bottom:8px;color:#0b6b2f">Presentación general</h4>
+                <p style="color:var(--muted)">
+                    Fritanga Selva nace para compartir los sabores de la selva con preparación cuidadosa y atención rápida. Ofrecemos opciones para llevar, domicilio y consumo en el local. En las otras páginas encontrarás el menú completo, la historia detrás del proyecto, nuestra ubicación y horarios, y un formulario para contacto y pedidos.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <strong>Fritanga Selva</strong> — Calidad y tradición</div>
+            <div style="text-align:right;color:var(--muted)">Tel: (000) 123-4567 · Abierto: 10:00 - 22:00</div>
+        </footer>
+    </div>
+
+    <script>
+        (function(){
+            const toggle = document.getElementById('dropdown-toggle');
+            const menu = document.querySelector('.dropdown-menu');
+            const dropdown = document.getElementById('pages-dropdown');
+
+            function closeMenu(){
+                menu.style.display = 'none';
+                toggle.setAttribute('aria-expanded','false');
+            }
+            function openMenu(){
+                menu.style.display = 'block';
+                toggle.setAttribute('aria-expanded','true');
+            }
+
+            // Toggle on click
+            toggle.addEventListener('click', function(e){
+                e.stopPropagation();
+                const isOpen = menu.style.display === 'block';
+                (isOpen ? closeMenu : openMenu)();
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', function(e){
+                if(!dropdown.contains(e.target)) closeMenu();
+            });
+
+            // Close with Escape
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape') closeMenu();
+            });
+
+            // Close when navigating via menu links
+            Array.from(menu.querySelectorAll('a')).forEach(a=>{
+                a.addEventListener('click', closeMenu);
+            });
+        }());
+    </script>
+</body>
+</html>
