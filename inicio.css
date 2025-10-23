@@ -5,15 +5,27 @@
 
 /* Variables de tema */
 :root{
+  /* Colores estructurales (base) */
   --bg: #f6f7fb;
   --surface: #ffffff;
-  --primary: #0b62ff;
-  --primary-600: #0753d6;
-  --accent: #00b894;
   --muted: #6b7280;
   --text: #0f1724;
-  --danger: #e02424;
   --glass: rgba(255,255,255,0.6);
+
+  /* Colores de "sabor" (integrados de tu lista) */
+  --primary: #E74C3C;       /* Tomate (era azul) */
+  --primary-600: #C0392B;   /* Tomate oscuro */
+  --accent: #27AE60;        /* Verde aguacate (era otro verde) */
+  --danger: #E74C3C;        /* Tomate (era otro rojo) */
+
+  /* Nuevas variables de sabor (disponibles para usar) */
+  --color-tomate: #E74C3C;
+  --color-dorado: #F39C12;
+  --color-cafe: #8B4513;
+  --color-verde: #27AE60;
+  --color-naranja: #E67E22;
+
+  /* Variables de layout y tipografía */
   --radius: 10px;
   --shadow-sm: 0 1px 2px rgba(15,23,36,0.06);
   --shadow-md: 0 6px 20px rgba(15,23,36,0.08);
@@ -21,7 +33,7 @@
   --max-width: 1200px;
   --gap: 1.25rem;
   --transition: 200ms cubic-bezier(.2,.9,.3,1);
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Reset ligero */
@@ -37,7 +49,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
   font-size:16px;
-  font-family:var(--font-family, Inter, system-ui, -apple-system);
+  font-family:var(--font-family);
   padding:2rem 1rem;
 }
 
@@ -94,7 +106,7 @@ body{
 .nav a:hover,
 .nav a:focus{
   color:var(--text);
-  background:rgba(11,98,255,0.06);
+  background:rgba(231, 76, 60, 0.06); /* Ajustado a --primary (tomate) */
   transform:translateY(-1px);
 }
 
@@ -174,12 +186,12 @@ body{
   transition:background var(--transition);
 }
 .list-item:hover{
-  background: rgba(11,98,255,0.04);
+  background: rgba(231, 76, 60, 0.04); /* Ajustado a --primary (tomate) */
 }
 .avatar{
   width:44px;
   height:44px;
-  background:linear-gradient(135deg,#ffd166,#ef476f);
+  background:linear-gradient(135deg,var(--color-dorado),var(--color-naranja)); /* Usando los nuevos colores */
   border-radius:8px;
   flex:0 0 44px;
 }
@@ -202,7 +214,7 @@ body{
 .input:focus, .select:focus, .textarea:focus{
   outline:none;
   border-color:var(--primary);
-  box-shadow:0 6px 18px rgba(11,98,255,0.08);
+  box-shadow:0 6px 18px rgba(231, 76, 60, 0.08); /* Ajustado a --primary (tomate) */
 }
 .label{
   font-size:0.85rem;
@@ -221,7 +233,7 @@ body{
   font-weight:600;
   color:white;
   background:var(--primary);
-  box-shadow:0 8px 20px rgba(11,98,255,0.12);
+  box-shadow:0 8px 20px rgba(231, 76, 60, 0.12); /* Ajustado a --primary (tomate) */
   transition:transform var(--transition), box-shadow var(--transition), background var(--transition);
   text-decoration:none;
 }
@@ -229,7 +241,7 @@ body{
 .btn.secondary{
   background:transparent;
   color:var(--primary);
-  border:1px solid rgba(11,98,255,0.12);
+  border:1px solid rgba(231, 76, 60, 0.12); /* Ajustado a --primary (tomate) */
   box-shadow:none;
 }
 .btn.ghost{
@@ -272,8 +284,8 @@ body{
 .badge{
   display:inline-block;
   padding:0.25rem 0.5rem;
-  background:rgba(11,98,255,0.12);
-  color:var(--primary);
+  background:rgba(231, 76, 60, 0.12); /* Ajustado a --danger (tomate) */
+  color:var(--danger);
   border-radius:999px;
   font-size:0.75rem;
   font-weight:700;
@@ -282,10 +294,8 @@ body{
 /* Responsive */
 @media (min-width:900px){
   .hero{
-     grid-template-columns: 1fr 350px;
+      grid-template-columns: 1fr 350px;
   }
-  .main{ grid-column: span 8; }
-  .aside{ grid-column: span 4; }
 }
 @media (max-width:899px){
   .header{ flex-direction:column; align-items:flex-start; gap:0.5rem; }
@@ -298,28 +308,30 @@ body{
 .logo-volcan {
   cursor: pointer;
   transition: transform 0.3s ease;
+  transform: scale(1.8);
+  transform-origin: center;
 }
 
 .logo-volcan:hover {
-  transform: scale(1.1);
+  transform: scale(1.9);
 }
 
 .volcan-base {
-  fill: #8B4513;
+  fill: var(--color-cafe); /* Usando el nuevo color */
   transition: fill 0.3s ease;
 }
 
 .logo-volcan:hover .volcan-base {
-  fill: #A0522D;
+  fill: #A0522D; /* Un café más claro */
 }
 
 .lava {
-  fill: #FF4500;
+  fill: var(--color-naranja); /* Usando el nuevo color */
   transition: fill 0.3s ease;
 }
 
 .logo-volcan:hover .lava {
-  fill: #FFD700;
+  fill: var(--color-dorado); /* Usando el nuevo color */
 }
 
 .humo {
@@ -328,13 +340,13 @@ body{
 }
 
 .logo-volcan:hover .humo {
-  fill: #999;
+  fill: #221c1c;
 }
 
 .fritanga-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100px;
   overflow: visible;
 }
 
@@ -361,7 +373,18 @@ body{
     opacity: 0;
   }
 }
-.logo-volcan {
-  transform: scale(1.8);
-  transform-origin: center;
+
+.volcan-container {
+  position: relative;
+}
+
+.volcan-container h1 {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  transform: translateX(1.125rem);
+  margin-top: -30px;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  font-size: 2.5rem;
 }

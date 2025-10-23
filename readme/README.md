@@ -69,3 +69,8 @@ Ejemplos Concretos de Uso
         <!-- ... más enlaces generados por Copilot -->
     </ul>
 </nav>
+Al pedirle que creara animaciones no las comprendia muy bien y las generaba con errores
+![](image.png)
+![](image-1.png)
+![alt text](image-2.png)
+Como se puede ver en la tercer imagen la "lava" sale a un lado del volcan y no del volcan
