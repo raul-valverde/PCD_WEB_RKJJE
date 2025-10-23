@@ -1,0 +1,347 @@
+:root {
+    /* Paleta de Colores de Fritanga Selva */
+    --color-tomate: #E74C3C; /* Rojo tomate - Vibrante y apetitoso */
+    --color-dorado: #F39C12; /* Amarillo dorado - Como el plátano frito */
+    --color-cafe: #8B4513; /* Café terroso - Como las arepas y carnes asadas */
+    --color-verde: #27AE60; /* Verde aguacate - Frescura y naturales */
+    --color-naranja: #E67E22; /* Naranja vibrante - Como los chicharrones */
+    
+    /* Variables de Fondo y Texto */
+    --color-fondo-claro: #fff8e7; /* El fondo crema claro actual */
+    --color-texto-principal: #3a3a3a; /* Un gris oscuro, usando un tono neutro para la legibilidad */
+    --color-texto-secundario: #7f8c8d;
+}
+
+/* ------------------------------------------------------------------- */
+/* ----- ESTILOS GLOBALES Y TIPOGRAFÍA ----- */
+/* ------------------------------------------------------------------- */
+body {
+    background-color: var(--color-fondo-claro); 
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-texto-principal); 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------------- */
+/* ----- ENCABEZADO Y NAVEGACIÓN (HEADER & NAV) ----- */
+/* ------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--color-tomate); /* Rojo Tomate para el Header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.nav-brand .brand-link {
+    color: var(--color-dorado); /* Dorado para la marca */
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--color-dorado); /* Dorado al hacer hover */
+}
+
+/* ------------------------------------------------------------------- */
+/* ----- TÍTULOS Y ENCABEZADOS DE SECCIÓN ----- */
+/* ------------------------------------------------------------------- */
+.menu-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px 0;
+    text-align: center;
+}
+
+.menu-title { /* H1 en el HTML */
+    font-size: 2.3em;
+    color: var(--color-tomate); /* Rojo Tomate para el título principal */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.menu-intro { /* P.subtitulo */
+    color: var(--color-texto-secundario);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* TÍTULOS DE CATEGORÍA */
+.menu-header-category {
+    /* Ajuste de espaciado que solicitaste (20px) */
+    max-width: 1200px;
+    margin: 20px auto 20px; 
+    padding: 0 30px;
+    text-align: center;
+}
+
+.menu-title-category {
+    font-size: 1.8em;
+    color: var(--color-cafe); /* Café para los títulos de categoría */
+    margin: 0;
+    font-weight: 700;
+}
+
+.menu-header-no-margin {
+    margin-top: 20px; 
+}
+
+
+/* ------------------------------------------------------------------- */
+/* ----- CONTENEDOR DEL MENÚ (CARRUSEL HORIZONTAL) ----- */
+/* ------------------------------------------------------------------- */
+.menu-container {
+    /* Contenedor padre que maneja el padding y el centrado si es necesario */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+}
+
+.menu-grid { /* Este es el carrusel desplazable */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; 
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+
+/* Opcional: Ocultar la barra de desplazamiento en navegadores WebKit */
+.menu-grid::-webkit-scrollbar {
+    height: 10px;
+}
+.menu-grid::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* ----- TARJETAS DE PLATO (menu-card) ----- */
+.menu-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 270px; 
+    scroll-snap-align: start;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* ESTILO ESPECIAL PARA LA TARJETA VERDE (Si la implementaste) */
+.menu-card-special {
+    background-color: var(--color-verde); /* Fondo Verde */
+}
+.menu-card-special .menu-item-name,
+.menu-card-special .menu-time,
+.menu-card-special .menu-price {
+    color: white !important;
+}
+
+
+.menu-figure {
+    margin: 0;
+    overflow: hidden;
+}
+
+.menu-image { /* img en el HTML */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-image {
+    transform: scale(1.05);
+}
+
+.menu-info {
+    padding: 15px 15px 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-name { /* H2 en el HTML */
+    color: var(--color-cafe);
+    font-size: 1.4em;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+.menu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: var(--color-texto-secundario);
+}
+
+.menu-time, .menu-price {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.menu-time {
+    background-color: #f3f3f3;
+}
+
+.menu-price {
+    color: var(--color-tomate); /* Rojo Tomate para el precio */
+    font-size: 1.1em;
+}
+.menu-rating {
+    color: var(--color-dorado); /* Dorado para las estrellas */
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ----- BOTÓN DE ORDENAR (.order-button) ----- */
+.order-button {
+    background-color: var(--color-tomate); /* Rojo Tomate para el botón */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: auto; 
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.order-button:hover {
+    background-color: var(--color-dorado); /* Dorado al hacer hover */
+    color: var(--color-cafe);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------------------------------------------- */
+/* ----- PIE DE PÁGINA (FOOTER) ----- */
+/* ------------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--color-cafe); /* Café para el footer */
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-text {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    margin-left: 30px;
+}
+
+.footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--color-dorado); /* Dorado al hacer hover */
+}
+/* ------------------------------------------------------------------- */
+/* ----- RESPONSIVO: Ajustes para Móviles y Tabletas ----- */
+/* ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Navegación */
+    .nav {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Contenido principal */
+    .menu-title {
+        font-size: 1.8em;
+    }
+    
+    .menu-title-category {
+        font-size: 1.5em;
+    }
+
+
+    .menu-container {
+        padding: 0 15px 30px;
+    }
+    /* Reducción del tamaño de la tarjeta para móviles */
+    .menu-card {
+        flex: 0 0 220px; /* Tarjeta un poco más pequeña */
+    }
+    
+    .menu-image {
+        height: 140px;
+    }
+
+    /* Footer */
+    .footer-inner {
+        flex-direction: column;
+    }
+    
+    .footer-nav {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
