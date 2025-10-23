@@ -1,0 +1,281 @@
+:root {
+    /* Rojo tomate - Vibrante y apetitoso */
+    --color-tomate: #E74C3C;
+    
+    /* Amarillo dorado - Como el plátano frito */
+    --color-dorado: #F39C12;
+    
+    /* Café terroso - Como las arepas y carnes asadas */
+    --color-cafe: #8B4513;
+    
+    /* Verde aguacate - Frescura y naturales */
+    --color-verde: #27AE60;
+    
+    /* Naranja vibrante - Como las chicharrones */
+    --color-naranja: #E67E22;
+    
+    /* Neutros y utilitarios */
+    --bg: #fff8f0;
+    --muted: #3b352f;
+    --glass: rgba(255,255,255,0.95);
+    --shadow: 0 18px 50px rgba(139,69,19,0.12);
+    --accent-shadow: 0 12px 36px rgba(231,126,34,0.16);
+    --radius-lg: 16px;
+    --radius-sm: 10px;
+    --transition: 220ms cubic-bezier(.2,.9,.3,1);
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --card-max: 720px;
+}
+
+/* Container y layout */
+.contact-container {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(900px 320px at 10% 12%, rgba(230,126,34,0.09), transparent 12%),
+    radial-gradient(800px 260px at 92% 88%, rgba(231,76,60,0.06), transparent 8%),
+    var(--bg);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 28px;
+  color: var(--muted);
+}
+
+/* Tarjeta del formulario */
+.contact-card {
+  width: 100%;
+  max-width: var(--card-max);
+  background: linear-gradient(180deg, var(--glass), rgba(255,250,248,0.98));
+  border-radius: calc(var(--radius-lg) + 6px);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(139,69,19,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(139,69,19,0.14);
+}
+
+/* Encabezado llamativo */
+.contact-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.contact-badge {
+  background: linear-gradient(135deg, var(--color-tomate), var(--color-naranja));
+  color: #fff;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: var(--accent-shadow);
+  transform: rotate(-3deg);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+.contact-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--color-cafe);
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.contact-sub {
+  font-size: 0.92rem;
+  /* manteniendo el comentario original: color en degradado no funciona en color, usamos overlay */
+  color: rgba(106,63,42,0.98);
+  opacity: 0.95;
+}
+
+/* Formulario */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .contact-form { grid-template-columns: 1fr; }
+}
+
+/* Campo principal (nombre + pedido) */
+.field {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,250,246,0.98));
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  border: 1px solid rgba(139,69,19,0.06);
+  box-shadow: 0 10px 28px rgba(139,69,19,0.04) inset;
+}
+
+/* Inputs y textarea */
+label {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--color-cafe);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+input[type="text"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.98rem;
+  border-radius: calc(var(--radius-sm) - 2px);
+  border: 1px solid rgba(230,210,198,0.9);
+  background: linear-gradient(180deg, #fff, rgba(255,250,246,0.98));
+  color: var(--color-cafe);
+  box-shadow: 0 10px 26px rgba(139,69,19,0.04);
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgba(139,69,19,0.38);
+  font-weight: 500;
+}
+input:focus,
+textarea:focus {
+  border-color: var(--color-dorado);
+  box-shadow: 0 14px 36px rgba(243,156,18,0.12);
+  transform: translateY(-3px);
+  background: #fffefc;
+}
+
+/* Área de número y acción */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* Teléfono */
+.phone-field {
+  background: linear-gradient(90deg, rgba(39,174,96,0.06), rgba(231,126,34,0.03));
+  border-radius: calc(var(--radius-sm) + 2px);
+  padding: 12px;
+  border: 1px dashed rgba(39,174,96,0.12);
+  box-shadow: 0 8px 22px rgba(39,174,96,0.04) inset;
+}
+
+/* Botón principal - envío / WhatsApp simulado */
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.06);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Botón de enviar clásico con acento dorado/tomate */
+.btn-send {
+  background: linear-gradient(135deg, var(--color-dorado), var(--color-tomate));
+  padding-inline: 18px;
+  border-radius: 14px;
+  min-width: 140px;
+  transform-origin: center;
+  box-shadow: 0 18px 48px rgba(231,76,60,0.14);
+}
+.btn-send:hover {
+  transform: translateY(-6px) rotate(-1deg) scale(1.01);
+  box-shadow: 0 26px 64px rgba(231,76,60,0.20);
+  filter: saturate(1.08);
+}
+.btn-send:active { transform: translateY(-2px); }
+
+/* Botón de WhatsApp (simulado) con tonalidad verde aguacate */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366, var(--color-verde));
+  box-shadow: 0 14px 36px rgba(39,174,96,0.12);
+  padding-inline: 16px;
+  min-width: 120px;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 24px 56px rgba(39,174,96,0.18);
+}
+
+/* Mensaje llamativo tipo "¡Hacé tu pedido..." */
+.order-cta {
+  margin-top: 14px;
+  font-weight: 900;
+  color: var(--color-cafe);
+  background: linear-gradient(90deg, rgba(231,126,34,0.06), rgba(231,76,60,0.04));
+  padding: 10px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  box-shadow: 0 8px 28px rgba(231,76,60,0.05);
+}
+
+/* Elementos decorativos para un toque "fancy" */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  right: -38px;
+  top: -28px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at 30% 30%, var(--color-naranja), transparent 35%),
+              radial-gradient(circle at 70% 70%, var(--color-tomate), transparent 40%);
+  opacity: 0.12;
+  transform: rotate(-10deg) scale(1.05);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.contact-card::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  bottom: -20px;
+  width: 100px;
+  height: 100px;
+  background: conic-gradient(from 120deg, var(--color-dorado), var(--color-naranja));
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Pequeños detalles */
+.helper {
+  font-size: 0.84rem;
+  color: rgba(139,69,19,0.75);
+  margin-top: 6px;
+}
+.kicker {
+  font-size: 0.78rem;
+  color: rgba(0,0,0,0.45);
+}
+
+/* Accesibilidad: foco visible y prefer-reduced-motion */
+:focus { outline: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .btn { will-change: transform; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, input, textarea { transition: none; transform: none; }
+}

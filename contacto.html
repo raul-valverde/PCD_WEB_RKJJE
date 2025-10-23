@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto / Pedidos - Fritanga Selva</title>
+    <!-- Incluir Font Awesome para los íconos de los botones (e.g., WhatsApp) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Usamos la fuente Inter para mejorar la estética -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CONEXIÓN AL CSS EXTERNO -->
+    <link rel="stylesheet" href="contactstyle.css">
+    <!-- Enlaza tu archivo JS (solo vinculado para tomar configuraciones) -->
+    <script src="contactscript.js" defer></script>
+</head>
+<body class="contact-container">
+    <div class="contact-card">
+        <header>
+            <div class="contact-header">
+                <!-- Ícono decorativo - Puedes cambiarlo por un emoji de comida o un icono de tu marca -->
+                <i class="fas fa-envelope-open-text fa-2x" style="color: var(--color-naranja);"></i>
+                <h1 class="contact-title">Contacto / Pedidos</h1>
+            </div>
+            <p class="order-cta">¡Hacé tu pedido y lo llevamos calentito!</p>
+            <span class="contact-sub">¿Listo para ordenar? Llena este formulario simple y te contactaremos de inmediato.</span>
+        </header>
+
+        <form class="contact-form">
+            
+            <!-- COLUMNA PRINCIPAL (Nombre y Pedido) -->
+            <div class="main-fields">
+                <!-- Nombre -->
+                <div class="field">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Ej. María Pérez" required>
+                </div>
+
+                <!-- Pedido o consulta -->
+                <div class="field">
+                    <label for="order">Pedido o consulta</label>
+                    <textarea id="order" name="order" placeholder="¿Qué querés pedir o consultar?" required></textarea>
+                </div>
+            </div>
+
+            <!-- COLUMNA LATERAL (Teléfono y Botones) -->
+            <div class="side-panel">
+                <!-- Teléfono -->
+                <div class="phone-field">
+                    <label for="phone">Número de teléfono</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ej. 11 2345 6789" required>
+                    <p class="helper">Solo usaremos tu número para confirmar y enviar tu pedido.</p>
+                </div>
+
+                <!-- Acciones (Botones) -->
+                <div class="actions">
+                    <button type="submit" class="btn btn-send">
+                        <i class="fas fa-plus-circle"></i> Agregar pedido
+                    </button>
+                    <a href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Enviar por WA
+                    </a>
+                </div>
+
+                <p class="kicker">
+                    **Al agregar** tu pedido se guarda localmente en la página. **Enviar por WA** (WhatsApp) es opcional si prefieres esa vía.
+                </p>
+
+                <!-- Área de pedidos agregados (simulada) -->
+                <div class="order-list">
+                    <p class="helper" style="margin-top: 0; text-align: center;">
+                        <span style="color: var(--color-tomate); font-weight: 700;">No hay pedidos agregados todavía.</span>
+                    </p>
+                    <button type="button" class="btn btn-secondary" style="width: 100%;">
+                        <i class="fas fa-trash-alt"></i> Limpiar Carrito
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
