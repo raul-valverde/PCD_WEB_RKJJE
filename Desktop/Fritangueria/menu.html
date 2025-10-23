@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Menú — Fritanga Selva</title>
-    <link rel="stylesheet" href="miestilo.css">
+    <!-- ASEGÚRATE QUE EL ARCHIVO CSS SE LLAME "menu-grid.css" -->
+    <link rel="stylesheet" href="miestilo.css"> 
+    <!-- Carga de fuente Poppins para tipografía. -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <meta name="description" content="Menú de Fritanga Selva — platos típicos nicaragüenses" />
 </head>
 <body>
@@ -31,23 +34,30 @@
             </div>
 
             <div class="menu-container">
+                <div class="menu-container">
+                                <div class="menu-header menu-header-category">
+                    <h2 class="menu-title-category">Nuestras Comidas</h2>
+                </div>
+                                <div class="menu-grid">
                 <div class="menu-grid">
 
+                    <!-- Tarjeta 1: Carne Asada -->
                     <article class="menu-card" aria-labelledby="dish-carne-asada">
                         <figure class="menu-figure">
-                            <img src="img/carneasada.jpg" alt="Carne asada cn ensalda, gallopinto y queso" class="menu-image" />
+                            <img src="img/carneasada.jpg" alt="Carne asada con ensalda, gallopinto y queso" class="menu-image" />
                         </figure>
                         <div class="menu-info">
                             <h2 id="dish-carne-asada" class="menu-item-name">Carne Asada</h2>
-                            <div class="menu-meta">
+<div class="menu-meta">
                                 <span class="menu-time">10 min</span>
                                 <span class="menu-price">C$ 200</span>
-                            </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                        </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
+                    <!-- Tarjeta 2: Pollo Asado -->
                     <article class="menu-card" aria-labelledby="dish-pollo-asado">
                         <figure class="menu-figure">
                             <img src="img/polloasado.jpeg" alt="Pollo Asado con tajadas, gallopinto y ensalada" class="menu-image" />
@@ -58,11 +68,12 @@
                                 <span class="menu-time">12 min</span>
                                 <span class="menu-price">C$ 200</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
-                            <button type="button" class="order-button">Ordenar ahora</button>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+<button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
+                    <!-- Tarjeta 3: Cerdo -->
                     <article class="menu-card" aria-labelledby="dish-cerdo">
                         <figure class="menu-figure">
                             <img src="img/cerdo.png" alt="Cerdo con gallopinto y ensalada" class="menu-image" />
@@ -73,14 +84,14 @@
                                 <span class="menu-time">15 min</span>
                                 <span class="menu-price">C$ 210</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
-
+<!-- Tarjeta 4: Yuca Frita -->
                     <article class="menu-card" aria-labelledby="dish-yuca-frita">
                         <figure class="menu-figure">
-                            <img src="images/yuca-frita.jpg" alt="Yuca frita con salsa" class="menu-image" />
+                            <img src="https://placehold.co/600x400/27AE60/FFFFFF?text=YUCA+FRITA" alt="Yuca frita con salsa" class="menu-image" />
                         </figure>
                         <div class="menu-info">
                             <h2 id="dish-yuca-frita" class="menu-item-name">Yuca Frita con Chicharrón</h2>
@@ -88,14 +99,15 @@
                                 <span class="menu-time">10 min</span>
                                 <span class="menu-price">C$ 100</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
+                    <!-- Tarjeta 5: Quesillo -->
                     <article class="menu-card" aria-labelledby="dish-quesillo">
                         <figure class="menu-figure">
-                            <img src="images/quesillo.jpg" alt="Quesillo nicaragüense en cuero" class="menu-image" />
+                            <img src="https://placehold.co/600x400/E67E22/FFFFFF?text=QUESILLO" alt="Quesillo nicaragüense en cuero" class="menu-image" />
                         </figure>
                         <div class="menu-info">
                             <h2 id="dish-quesillo" class="menu-item-name">Quesillo en Cuero</h2>
@@ -103,52 +115,92 @@
                                 <span class="menu-time">8 min</span>
                                 <span class="menu-price">C$ 60</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
                     <article class="menu-card" aria-labelledby="dish-tajadas">
+                        <figure class="menu-figure">
+                            <img src="img/tajadas.jpg" alt="Tajadas de plátano con queso" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-tajadas" class="menu-item-name">Tajadas con Queso</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">7 min</span>
+                                <span class="menu-price">C$ 80</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <div class="menu-header menu-header-category menu-header-no-margin">
+                <h2 id="bebidas-title" class="menu-title-category">Nuestras Bebidas</h2>
+            </div>
+            <div class="menu-container">
+
+            <div class="menu-container">
+                <div class="menu-grid">
+
+                    <article class="menu-card" aria-labelledby="dish-cacao">
                         <figure class="menu-figure">
-                            <img src="images/tajadas.jpg" alt="Tajadas de plátano con queso" class="menu-image" />
+                            <img src="img/cacao.jpg" alt="Vaso de cacao frío con hielo" class="menu-image" />
                         </figure>
                         <div class="menu-info">
-                            <h2 id="dish-tajadas" class="menu-item-name">Tajadas con Queso</h2>
+                            <h2 id="dish-cacao" class="menu-item-name">Cacao Frío</h2>
                             <div class="menu-meta">
-                                <span class="menu-time">7 min</span>
-                                <span class="menu-price">C$ 80</span>
+                                <span class="menu-time">2 min</span>
+                                <span class="menu-price">C$ 40</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
-                    <article class="menu-card" aria-labelledby="dish-nacatamal">
+                    <article class="menu-card" aria-labelledby="dish-chicha">
                         <figure class="menu-figure">
-                            <img src="images/nacatamal.jpg" alt="Nacatamal tradicional" class="menu-image" />
+                            <img src="img/chicha.jpg" alt="Vaso de chicha con hielo" class="menu-image" />
                         </figure>
                         <div class="menu-info">
-                            <h2 id="dish-nacatamal" class="menu-item-name">Nacatamal</h2>
+                            <h2 id="dish-chicha" class="menu-item-name">Chicha</h2>
                             <div class="menu-meta">
-                                <span class="menu-time">25 min</span>
-                                <span class="menu-price">C$ 180</span>
+                                <span class="menu-time">2 min</span>
+                                <span class="menu-price">C$ 35</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
 
-                    <article class="menu-card" aria-labelledby="dish-baho">
+                    <article class="menu-card menu-card-special" aria-labelledby="dish-gaseosa">
                         <figure class="menu-figure">
-                            <img src="images/baho.jpg" alt="Baho tradicional" class="menu-image" />
+                            <img src="img/gaseosa.jpg" alt="Variedad de gaseosas embotelladas" class="menu-image" />
                         </figure>
                         <div class="menu-info">
-                            <h2 id="dish-baho" class="menu-item-name">Baho</h2>
+                            <h2 id="dish-gaseosa" class="menu-item-name">Gaseosa</h2>
                             <div class="menu-meta">
-                                <span class="menu-time">30 min</span>
-                                <span class="menu-price">C$ 240</span>
+                                <span class="menu-time">1 min</span>
+                                <span class="menu-price">C$ 25</span>
                             </div>
-                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐️⭐️⭐️⭐️⭐️</div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                    <article class="menu-card" aria-labelledby="dish-cerveza">
+                        <figure class="menu-figure">
+                            <img src="img/cerveza.jpg" alt="Cerveza nacional fría" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-cerveza" class="menu-item-name">Cerveza Nacional</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">1 min</span>
+                                <span class="menu-price">C$ 65</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
                             <button type="button" class="order-button">Ordenar ahora</button>
                         </div>
                     </article>
