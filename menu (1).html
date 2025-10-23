@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Menú — Fritanga Selva</title>
+    <!-- ASEGÚRATE QUE EL ARCHIVO CSS SE LLAME "menu-grid.css" -->
+    <link rel="stylesheet" href="miestilo.css"> 
+    <script src="script.js"></script>
+    <!-- Carga de fuente Poppins para tipografía. -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Menú de Fritanga Selva — platos típicos nicaragüenses" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegación principal">
+            <div class="nav-brand">
+                <a href="/" class="brand-link">Fritanga Selva</a>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#historia" class="nav-link">Historia</a></li>
+                <li class="nav-item"><a href="#menu" class="nav-link">Menú</a></li>
+                <li class="nav-item"><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="menu" class="main-content">
+        <section class="menu-section" aria-labelledby="menu-title">
+            <div class="menu-header">
+                <h1 id="menu-title" class="menu-title">Nuestro Menú</h1>
+                <p class="menu-intro">Delicias de fritanga nicaragüense preparadas al momento. Selecciona tu plato y ordena ahora.</p>
+            </div>
+
+            <div class="menu-container">
+                <div class="menu-container">
+                                <div class="menu-header menu-header-category">
+                    <h2 class="menu-title-category">Nuestras Comidas</h2>
+                </div>
+                                <div class="menu-grid">
+                <div class="menu-grid">
+
+                    <!-- Tarjeta 1: Carne Asada -->
+                    <article class="menu-card item-menu" aria-labelledby="dish-carne-asada">
+                        <figure class="menu-figure">
+                            <img src="img/carneasada.jpg" alt="Carne asada con ensalda, gallopinto y queso" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-carne-asada" class="menu-item-name">Carne Asada</h2>
+<div class="menu-meta">
+                                <span class="menu-time">10 min</span>
+                                <span class="menu-price">C$ 200</span>
+                        </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 2: Pollo Asado -->
+                    <article class="menu-card item-menu" aria-labelledby="dish-pollo-asado">
+                        <figure class="menu-figure">
+                            <img src="img/polloasado.jpeg" alt="Pollo Asado con tajadas, gallopinto y ensalada" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-pollo-asado" class="menu-item-name">Pollo Asado</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">12 min</span>
+                                <span class="menu-price">C$ 200</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+<button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 3: Cerdo -->
+                    <article class="menu-card item-menu" aria-labelledby="dish-cerdo">
+                        <figure class="menu-figure">
+                            <img src="img/cerdo.png" alt="Cerdo con gallopinto y ensalada" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-cerdo" class="menu-item-name">Cerdo</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">15 min</span>
+                                <span class="menu-price">C$ 210</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+<!-- Tarjeta 4: Yuca Frita -->
+                    <article class="menu-card item-menu" aria-labelledby="dish-tacos">
+                        <figure class="menu-figure">
+                            <img src="img/tacos.jpg" alt="Tacos con ensalada" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-tacos" class="menu-item-name">Tacos</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">15 min</span>
+                                <span class="menu-price">C$ 100</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 5: Quesillo -->
+                    <article class="menu-card item-menu" aria-labelledby="dish-enchilada">
+                        <figure class="menu-figure">
+                            <img src="img/enchiladas.jpg" alt="Enchiladas nicaragüenses" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-enchilada" class="menu-item-name">Enchiladas</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">15 min</span>
+                                <span class="menu-price">C$ 70</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="menu-header menu-header-category menu-header-no-margin">
+                <h2 id="bebidas-title" class="menu-title-category">Nuestras Bebidas</h2>
+            </div>
+            <div class="menu-container">
+
+            <div class="menu-container">
+                <div class="menu-grid">
+
+                    <article class="menu-card item-menu" aria-labelledby="dish-cacao">
+                        <figure class="menu-figure">
+                            <img src="img/cacao.jpg" alt="Vaso de cacao frío con hielo" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-cacao" class="menu-item-name">Cacao Frío</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">2 min</span>
+                                <span class="menu-price">C$ 60</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                    <article class="menu-card item-menu" aria-labelledby="dish-coca-cola">
+                        <figure class="menu-figure">
+                            <img src="img/cocacola.jpeg" alt="cocacola" class="menu-image" />
+                        </figure>
+                        <div class="menu-info">
+                            <h2 id="dish-chicha" class="menu-item-name">Coca-Cola</h2>
+                            <div class="menu-meta">
+                                <span class="menu-time">2 min</span>
+                                <span class="menu-price">C$ 35</span>
+                            </div>
+                            <div class="menu-rating" aria-label="Valoración 5 de 5">⭐⭐⭐⭐⭐</div>
+                            <button type="button" class="order-button">Ordenar ahora</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <p class="footer-text">© <span class="brand-name">Fritanga Selva</span> — Todos los derechos reservados</p>
+            <nav class="footer-nav" aria-label="Enlaces de pie de página">
+                <ul class="footer-list">
+                    <li><a href="#ubicacion" class="footer-link">Ubicación</a></li>
+                    <li><a href="#contacto" class="footer-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
