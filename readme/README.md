@@ -74,5 +74,10 @@ Como se puede ver en la tercer imagen la "lava" sale a un lado del volcan y no d
         <!-- ... más enlaces generados por Copilot -->
     </ul>
 </nav>
-
-
+```
+Ya listos para publicar la pagina pedimos ayuda de los paso a paso de como hacerlo a copilot
+<img width="1600" height="769" alt="Captura de pantalla 2025-10-23 213012" src="https://github.com/user-attachments/assets/770234cb-2eca-4ee0-815a-bfaf1908dab5" />
+le enviamos esa imagen con el siguietne prompt y su respuesta fue:
+<img width="804" height="765" alt="Captura de pantalla 2025-10-23 213031" src="https://github.com/user-attachments/assets/824ee78f-d93b-4b67-8aef-a0743e7fb47a" />
+completandolo con exito.
+Link de la pagina publicada: https://raul-valverde.github.io/PCD_WEB_RKJJE/
